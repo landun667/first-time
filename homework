@@ -1,1 +1,40 @@
-
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() 
+{
+        while (true)
+        {
+                double Angle, d, V0;
+                cout << "d= ";
+                cin >> d;
+                cout << " 输入的d为: " << d << endl;
+                cout << "V0= ";
+                cin >> V0;
+                cout << " 输入的V0为: " << V0 << endl;
+                if (((10 * d) / (V0 * V0)) > 1)
+                {
+                        cout << "Error 请重新输入" << endl;
+                        continue;
+                }
+                if (d <= 0 or V0 <= 0)
+                {
+                        cout << "Error 请重新输入" << endl;
+                        continue;
+                }
+                double pi = acos(-1);
+                Angle = ((asin((10 * d) / (V0 * V0))) / 2) * (180 / pi);
+                //上面的两行询问了DeepSeek求解角度的方法：反函数的表达以及Π的获取if (Angle > 90 or Angle < 0)
+                {
+                        cout << "Error 请重新输入" << endl;
+                        continue;
+                }
+                cout << "Angle= " << Angle << endl;
+                if ( Angle < 90 && Angle > 0)
+                {
+                        break;
+                }
+        }
+        
+        return 0;
+}
